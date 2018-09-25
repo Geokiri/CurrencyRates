@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Currency rates changes";
+}
+
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+<link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<style>
+    input, select, textarea {
+         max-width: 250px; 
+    }
+
+</style>
+
+<br />
+<div class="form-inline">
+
+    <label class="control-label">Date </label>
+    <input id="Date" class="datepicker" type="text" width="50" />
+
+    <button type="button" onclick="GetRates()" class="btn btn-info">Get changes</button>
+</div>
+<br />
+
+<table id="dataTable" class="hidden" style="width:100%">
+    <thead>
+        <tr>
+            <th>Currencies</th>
+            <th>Change for currency rates</th>
+        </tr>
+    </thead>
+</table>
+
+
+@section Scripts{
+
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(function () {
+
+            $('.datepicker').datepicker({
+                dateFormat: "yy-mm-dd",
+                changeMonth: true,
+                changeYear: true,
+                maxDate: new Date(2014, 11, 31),
+                showOn: "both",
+                buttonText: "Select"
+
+            });
+        });
+
+        function GetRates() {
+            $('#dataTable').removeClass('hidden');
+            var table = $('#dataTable').DataTable();
+            var date = $('#Date').val();
+
+            table.destroy();
+
+            $('#dataTable').DataTable({
+                "ajax": {
+                    "url": "/Home/GetList?date=" + date,
+                    "type": "GET",
+                    "datatype": "json"
+                },
+                "columns": [
+                    {
+                        "data": "Currencie"
+                    },
+                    {
+                        "data": "Rates"
+                    }
+                ]
+            }).order([1, 'desc'])
+                .draw();
+        };
+
+    </script>
+
+
+}

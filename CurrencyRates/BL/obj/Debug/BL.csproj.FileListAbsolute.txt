@@ -1,0 +1,6 @@
+C:\Users\wrong\OneDrive\Documents\Visual Studio 2017\Projects\CurrencyRates\BL\bin\Debug\BL.dll
+C:\Users\wrong\OneDrive\Documents\Visual Studio 2017\Projects\CurrencyRates\BL\bin\Debug\BL.pdb
+C:\Users\wrong\OneDrive\Documents\Visual Studio 2017\Projects\CurrencyRates\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\wrong\OneDrive\Documents\Visual Studio 2017\Projects\CurrencyRates\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\wrong\OneDrive\Documents\Visual Studio 2017\Projects\CurrencyRates\BL\obj\Debug\BL.dll
+C:\Users\wrong\OneDrive\Documents\Visual Studio 2017\Projects\CurrencyRates\BL\obj\Debug\BL.pdb
